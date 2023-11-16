@@ -1,0 +1,45 @@
+@import url('https://fonts.cdnfonts.com/css/trajan-pro');
+
+body                            {margin: 0; padding: 0; margin: 0; font-family: Georgia, 'Times New Roman', Times, serif;}
+main                            {width: 100%; display: flow-root;}
+main section                    {display: flex; justify-content:space-evenly; }
+
+/* HEADER */
+header                          {margin: 0 auto; text-align: center; background-image: url(../assets/Wisi\ verse\ 2.avif); background-size: cover; background-position: center center;}
+header h1                       {color:rgb(53, 0, 102) ;margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 15vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px; animation: colorChange 10s infinite }
+
+@keyframes colorChange {
+    0% { color: rgb(53, 0, 102); }
+    25% { color: rgb(102, 0, 53); }
+    50% { color: #5C373F }
+    75% { color: rgb(102, 53, 0); }
+    100% { color: rgb(53, 0, 102); }
+}                   
+
+/* GENERAL */
+.homeCol                     { text-align: center; margin-bottom: 20px; display: block; }
+.banner                  {width: 100%; margin: 0; padding:0;}
+
+/* SECTIONE BANNER */           
+
+.banner figure           {margin: 0; padding:0; position: relative; margin-bottom: 20px;}
+.banner figure img       {width: 100%}
+
+/* SECTION IMAGE */
+.homeCol figure                  {margin-top: 30px;}
+.homeCol figure.painting-img img {transition: all; transition-duration: .5s; box-shadow: 2px; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6)}
+.homeCol figure:hover  img       {transform: scale(1.2); transition-duration: 1s; box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.4); z-index: 99;} 
+ 
+
+/* SECTIONEIMAGE CLOTHS*/
+.HomeCloth               {position: relative; width: 200px; }
+.shirt            {position: absolute; transition: all; transition-duration: .5s; left: -40px;}
+.shaddow          {position: absolute; opacity: .6; transition: all; transition-duration: .5s; left: -40px;} 
+figure:hover img.shaddow    {opacity: .3; transition-duration: 1s;  box-shadow: none;}
+figure:hover img.shirt      {transform: scale(1.2); transition-duration: 1s; box-shadow: none;}
+/* FOOTER */
+footer                      {background-image: url(../assets/Wisi\ verse\ 2.avif); background-size: cover; background-position: bottom;; text-align: center;}
+footer h1                   {color:rgb(53, 0, 102); background-color: rgba(0, 0, 0, 0.829); padding: 20px 0; margin: 30px 0 0 0; font-family: Arial, Helvetica, sans-serif; font-size: 1.5vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px; animation: colorChange 10s infinite }
+
+
+

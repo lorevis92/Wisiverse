@@ -1,0 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/trajan-pro');
+
+body                            {background-color: #7498A1 ; margin: 0; padding: 0; margin: 0; font-family: Georgia, 'Times New Roman', Times, serif;}
+
+header                          {display: flex}
+header h1                       {margin: auto 50px auto 0; font-family: Arial, Helvetica, sans-serif; font-size: 10vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px;}
+
+/* GESTIONE CAPO D'ABBIGLIAMENTO */
+.articolo h1        {margin: auto 0; font-family: Arial, Helvetica, sans-serif; font-size: 2vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px;}
+
+.articolo           {text-align: center; position: relative; margin-bottom: 20px;}
+.cloth-fake         {visibility: hidden;}
+.cloth img          {position: absolute; top: 15%; left: 50%; translate: -50%; transition: all; transition-duration: 1s;} 
+.shaddow            {opacity: .7;}   
+.immagineArticolo :hover .shaddow      {transform: scale(1.1); left:52%; top:20%; opacity: .4;} 
+.immagineArticolo :hover .shirt     {transform: scale(1.2); } 
+.articolo div:last-child                {display: flex; justify-content: center;}
+.articolo div:last-child p:first-child {text-decoration:line-through; margin-right: 15px;}
+.articolo div:last-child p:last-child {text-decoration:underline;}
+
+/* FOOTER */
+footer                      {background-image: url(../assets/Wisi\ verse\ 2.avif); background-size: cover; background-position: bottom;; text-align: center;}
+footer h1                   {color:rgb(53, 0, 102); background-color: rgba(0, 0, 0, 0.829); padding: 20px 0; margin: 30px 0 0 0; font-family: Arial, Helvetica, sans-serif; font-size: 1.5vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px; animation: colorChange 10s infinite }
