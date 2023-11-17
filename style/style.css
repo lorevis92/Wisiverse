@@ -17,8 +17,17 @@ header h1                       {color:rgb(53, 0, 102) ;margin: 0; font-family: 
 }                   
 
 /* GENERAL */
-.homeCol                     { text-align: center; margin-bottom: 20px; display: block; }
+.homeCol                     { text-align: center; margin-bottom: 20px; display: block;}
 .banner                  {width: 100%; margin: 0; padding:0;}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotateY(0deg); /* Angolo di partenza */
+    }
+    to {
+        transform: rotateY(360deg); /* Angolo di arrivo (una rotazione completa) */
+    }
+}
 
 /* SECTIONE BANNER */           
 
@@ -37,9 +46,26 @@ header h1                       {color:rgb(53, 0, 102) ;margin: 0; font-family: 
 .shaddow          {position: absolute; opacity: .6; transition: all; transition-duration: .5s; left: -40px;} 
 figure:hover img.shaddow    {opacity: .3; transition-duration: 1s;  box-shadow: none;}
 figure:hover img.shirt      {transform: scale(1.2); transition-duration: 1s; box-shadow: none;}
+
+.questionMark                {animation: rotateAnimation 4s linear infinite; transform-origin: center;}
+figure.questionMark:hover img       {transform: scale(.1) rotate(360deg)}
+figure.questionMark:hover           {animation: none;}
+figure.questionMark:hover::before img{
+    content: "X";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: red;
+  }
+
+/* GALLERY */
+.secondGallery {margin-top: 25px; background-color:  #7498A1; padding: 25px 0;}
+
 /* FOOTER */
 footer                      {background-image: url(../assets/Wisi\ verse\ 2.avif); background-size: cover; background-position: bottom;; text-align: center;}
-footer h1                   {color:rgb(53, 0, 102); background-color: rgba(0, 0, 0, 0.829); padding: 20px 0; margin: 30px 0 0 0; font-family: Arial, Helvetica, sans-serif; font-size: 1.5vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px; animation: colorChange 10s infinite }
+footer h1                   {margin: 0; color:rgb(53, 0, 102); background-color: rgba(0, 0, 0, 0.829); padding: 20px 0; font-family: Arial, Helvetica, sans-serif; font-size: 1.5vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px; animation: colorChange 10s infinite }
 
 
 
