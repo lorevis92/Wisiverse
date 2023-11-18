@@ -86,6 +86,10 @@ header h1                       {margin: auto 50px auto 0; font-family: Arial, H
     transition: transform 0.5s ease-in-out;
 }
 
+.photo .rowBack {
+    display: none;
+}
+
 .rowBack {
     position: absolute;
     transform: rotateY(-180deg); /* Ruota la seconda immagine di 180 gradi per nasconderla inizialmente */
