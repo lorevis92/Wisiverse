@@ -68,4 +68,41 @@ footer                      {background-image: url(../assets/Wisi\ verse\ 2.avif
 footer h1                   {margin: 0; color:rgb(53, 0, 102); background-color: rgba(0, 0, 0, 0.829); padding: 20px 0; font-family: Arial, Helvetica, sans-serif; font-size: 1.5vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px; animation: colorChange 10s infinite }
 
 
+@media only screen and (max-width: 600px) {
+    body {overflow-x: hidden; }
+
+    header h1 {
+        font-size: 10vw;
+    }
+
+    .homeCol {
+        width: 100%;
+        text-align: center;
+    }
+
+    .painting-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .HomeCloth {
+        width: 100%;
+        text-align: center;
+    }
+
+    .shirt,
+    .shaddow {
+        left: 0;
+    }
+
+    footer h1 {
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+    }
+}
 
