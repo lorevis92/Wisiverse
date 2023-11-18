@@ -3,15 +3,17 @@ body {
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0; /* Cambia colore di sfondo */
+    position: relative;
 }
 
 
 header                          {display: flex}
-header h1                       {margin: auto 50px auto 0; font-family: Arial, Helvetica, sans-serif; font-size: 10vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px;}
+header h1                       {margin: auto 50px auto 0; font-family: Arial, Helvetica, sans-serif; font-size: 4vw;; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 5px;}
 
 .gallery {
     max-width: 800px;
     margin: 20px auto;
+    padding: 0 20px;
 }
 
 .row {
@@ -20,37 +22,25 @@ header h1                       {margin: auto 50px auto 0; font-family: Arial, H
     margin-bottom: 20px;
 }
 
+
+
 .photo,
 .description {
     width: 48%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 300px; /* Imposta un'altezza fissa */
+   /* height: 300px; /* Imposta un'altezza fissa */
 }
 
-.photo img {
-    transition: transform 0.5s ease-in-out;
-}
+.description :nth-child(2) { font-weight: lighter;}
+.photo:hover img {transform: scale(1.2);}
+.photo:hover .rowBack {display: block;}
 
+/*
 .photo:hover img {
-    transform: scale(1.1);
-}
-
-.photo::before,
-.photo::after {
-    transition: opacity 0.5s ease-in-out;
-}
-
-.photo::before {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.photo:hover::before {
-    opacity: 1;
-}
-
-
+    transform: scale(1.2);
+} */
 
 .description p {
     margin-top: 10px;
@@ -59,9 +49,6 @@ header h1                       {margin: auto 50px auto 0; font-family: Arial, H
     font-weight: bold;
 }
 
-.photo::after {
-    font-size: 18px;
-}
 
 
 /* Posizionamento a destra */
@@ -83,45 +70,46 @@ header h1                       {margin: auto 50px auto 0; font-family: Arial, H
     transition: transform 0.3s ease-in-out;
 }
 
-.photo:hover img {
-    transform: scale(1.1);
+/* Aggiungi stili per la parte anteriore e posteriore della "carta" */
+.photo.right, .photo.left{
+    position: relative;
+    perspective: 1000px; /* Aggiungi una prospettiva per creare l'effetto 3D */
 }
 
-.photo::before {
-    content: '';
-    position: absolute;
+.rowFront,
+.rowBack {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease-in-out;
+    backface-visibility: hidden;
+    transition: transform 0.5s ease-in-out;
 }
 
-.photo:hover::before {
-    visibility: visible;
-    opacity: 1;
-}
-
-.photo::after {
-    content: attr(data-content);
+.rowBack {
     position: absolute;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease-in-out;
+    transform: rotateY(-180deg); /* Ruota la seconda immagine di 180 gradi per nasconderla inizialmente */
 }
 
-.photo:hover::after {
-    visibility: visible;
-    opacity: 1;
+.photo.right:hover .rowFront {
+    transform: rotateY(180deg); /* Ruota la parte anteriore al passaggio del mouse */
 }
+
+.photo.right:hover .rowBack {
+    transform: rotateY(0); /* Ruota la parte posteriore al passaggio del mouse */
+}
+
+.photo.left:hover .rowFront {
+    transform: rotateY(180deg); /* Ruota la parte anteriore al passaggio del mouse */
+}
+
+.photo.left:hover .rowBack {
+    transform: rotateY(0); /* Ruota la parte posteriore al passaggio del mouse */
+}
+
+
+
+
 
 /* Aggiusta per schermi più piccoli */
 @media (max-width: 600px) {
@@ -141,3 +129,4 @@ header h1                       {margin: auto 50px auto 0; font-family: Arial, H
         order: 1; /* Cambia l'ordine nell'ordine visuale */
     }
 }
+
