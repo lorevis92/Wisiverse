@@ -38,7 +38,7 @@ header h1                       {color:rgb(53, 0, 102) ;margin: 0; font-family: 
 .homeCol figure                  {margin-top: 30px;}
 .homeCol figure.painting-img img {transition: all; transition-duration: .5s; box-shadow: 2px; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6)}
 .homeCol figure:hover  img       {transform: scale(1.2); transition-duration: 1s; box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.4); z-index: 99;} 
- 
+.tshirtheight                    {display: none;}
 
 /* SECTIONEIMAGE CLOTHS*/
 .HomeCloth               {position: relative; width: 200px; }
@@ -69,6 +69,8 @@ footer h1                   {margin: 0; color:rgb(53, 0, 102); background-color:
 
 
 @media only screen and (max-width: 600px) {
+    .tshirtheight{display:block; visibility: hidden;}
+    
     body {overflow-x: hidden; }
 
     header h1 {
@@ -92,17 +94,19 @@ footer h1                   {margin: 0; color:rgb(53, 0, 102); background-color:
 
     .shirt,
     .shaddow {
-        left: 0;
+        top: 0;
+        left: 50%;
+        transform: translateX(-65%);
     }
 
     footer h1 {
         font-size: 3vw;
     }
-}
 
-@media only screen and (max-width: 600px) {
     .gallery {
         flex-direction: column;
     }
 }
+
+
 
