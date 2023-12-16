@@ -130,6 +130,24 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var clickablePhotos = document.querySelectorAll('.photo');
+            clickablePhotos.forEach(function (photo) {
+                photo.addEventListener('click', function () {
+                    photo.querySelectorAll('.rowFront, .rowBack').forEach(function (child) {
+                        // Inverti le classi per ogni figlio
+                        if (child.classList.contains('rowFront')) {
+                            child.classList.remove('rowFront');
+                            child.classList.add('rowBack');
+                        } else if (child.classList.contains('rowBack')) {
+                            child.classList.remove('rowBack');
+                            child.classList.add('rowFront');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
